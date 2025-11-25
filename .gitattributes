@@ -1,0 +1,42 @@
+# ตั้งค่าพื้นฐาน
+* text=auto eol=lf
+
+# บอก Git ว่าไฟล์นามสกุลพวกนี้ ให้ใช้ LFS จัดการ (ห้ามเป็น Text)
+*.uasset filter=lfs diff=lfs merge=lfs -text
+*.umap filter=lfs diff=lfs merge=lfs -text
+*.upk filter=lfs diff=lfs merge=lfs -text
+*.udk filter=lfs diff=lfs merge=lfs -text
+*.ubulk filter=lfs diff=lfs merge=lfs -text
+*.uptnl filter=lfs diff=lfs merge=lfs -text
+*.usmap filter=lfs diff=lfs merge=lfs -text
+
+# ไฟล์ Art Assets (ถ้ามึงเอา Source file เก็บในโปรเจกต์ด้วย)
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+*.tga filter=lfs diff=lfs merge=lfs -text
+*.bmp filter=lfs diff=lfs merge=lfs -text
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.obj filter=lfs diff=lfs merge=lfs -text
+*.blend filter=lfs diff=lfs merge=lfs -text
+*.max filter=lfs diff=lfs merge=lfs -text
+*.maya filter=lfs diff=lfs merge=lfs -text
+*.mb filter=lfs diff=lfs merge=lfs -text
+
+# Audio / Video
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.mp3 filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.mov filter=lfs diff=lfs merge=lfs -text
+
+# Binary DLLs / Libs (เผื่อมี ThirdParty)
+*.dll filter=lfs diff=lfs merge=lfs -text
+*.lib filter=lfs diff=lfs merge=lfs -text
+*.pdb filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
+
+# --- FILE LOCKING (สำคัญมากถ้าทำกันหลายคน) ---
+# บังคับให้ไฟล์ Asset ต้อง Lock ก่อนแก้ เพื่อกันงานทับกัน
+*.uasset lockable
+*.umap lockable
